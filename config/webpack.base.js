@@ -2,7 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { DefinePlugin } = require("webpack");
 const WebpackBar = require("webpackbar");
-// const Dotenv = require('dotenv-webpack');
 
 // css/css module 正则表达式
 const cssRegex = /\.css$/;
@@ -71,7 +70,17 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: true,
+              modules: {
+                namedExport: false,
+                mode: 'local',
+                auto: true,
+                exportGlobals: true,
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                localIdentContext: path.resolve(__dirname, 'src'),
+                localIdentHashSalt: 'hash',
+                exportLocalsConvention: 'asIs',
+                exportOnlyLocals: false,
+              },
             },
           },
           "postcss-loader",
@@ -89,7 +98,17 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: true,
+              modules: {
+                namedExport: false,
+                mode: 'local',
+                auto: true,
+                exportGlobals: true,
+                localIdentName: '[local]--[hash:base64:5]',
+                localIdentContext: path.resolve(__dirname, 'src'),
+                localIdentHashSalt: 'hash',
+                exportLocalsConvention: 'asIs',
+                exportOnlyLocals: false,
+              },
             },
           },
           "postcss-loader",
