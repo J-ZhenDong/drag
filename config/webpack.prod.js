@@ -14,18 +14,36 @@ module.exports = merge(baseConfig, {
   mode: "production",
   output: {
     clean: true,
-    filename: "js/[name].[contenthash].js",
-    chunkFilename: "js/[name].[contenthash].js",
-    assetModuleFilename: "assets/[name].[contenthash][ext]",
+    filename: "static/js/[name].[contenthash].js",
+    chunkFilename: "static/js/[name].[contenthash].js",
+    assetModuleFilename: "static/assets/[name].[contenthash][ext]",
   },
   plugins: [
     // 打包分析
     // new BundleAnalyzerPlugin(),
     // 生成 manifest.json
-    new WebpackManifestPlugin(),
+    new WebpackManifestPlugin({
+      fileName: 'manifest.json',
+        publicPath: './',
+        generate: (seed, files, entrypoints) => {
+          const manifestFiles = files.reduce((manifest, file) => {
+            manifest[file.name] = file.path;
+            return manifest;
+          }, seed);
+          const entrypointFiles = entrypoints.main.filter(
+            fileName => !fileName.endsWith('.map')
+          );
+
+          return {
+            files: manifestFiles,
+            entrypoints: entrypointFiles,
+          };
+        },
+    }),
     // 将 css 从 js 中分离
     new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash].css",
+      filename: 'static/css/[name].[contenthash:8].css',
+      chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
     }),
     new CopyPlugin({
       patterns: [
@@ -62,7 +80,7 @@ module.exports = merge(baseConfig, {
           reuseExistingChunk: true, // 复用已存在的 chunk
         },
         libLodash: {
-          test: /[\\/]node_modules[\\/]antd[\\/]/, // 匹配 antd 库
+          test: /[\\/]node_modules[\\/]antd[\\/]/, // 匹配 lodash 库
           name: "lib-lodash", // 输出的文件名
           priority: 20, // 优先级，数值越大优先级越高
           reuseExistingChunk: true, // 复用已存在的 chunk

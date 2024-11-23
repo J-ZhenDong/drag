@@ -14,6 +14,7 @@ function HomePage() {
       <div>{id}</div>
       <div>{name}</div>
       <div>{avatar}</div>
+      <div>hhhhh</div>
     </div>
   );
 }
