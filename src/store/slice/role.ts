@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { RootState } from "..";
 export type Role = 'admin' | 'super_admin' | 'normal'
 
 interface BaseInfo {
@@ -29,7 +29,7 @@ export const roleSlice = createSlice({
     }
   }
 })
-export const selectRole = (state: RoleState) => {
+export const selectRole = (state: RootState) => {
   return state.role
 }
 export const { setRole } = roleSlice.actions
