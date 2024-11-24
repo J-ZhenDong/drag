@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useRoutes } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { ConfigProvider } from "antd";
+import en_US from "antd/locale/en_US";
+import zh_CN from "antd/locale/zh_CN";
+import dayjs from "dayjs";
+import "dayjs/locale/en";
+import "dayjs/locale/zh-cn";
+import { getLang, type LangState } from "@/store/slice/lang";
 import routes from "./routes";
+const langMap = {
+  en_US,
+  zh_CN,
+};
+const dayjsLangMap = {
+  en_US: 'en',
+  zh_CN: 'zh-cn'
+}
 function App() {
-  return <div>{useRoutes(routes)}</div>;
+  const { lang }: LangState = useSelector(getLang);
+  const [locale, setLocale] = useState(zh_CN);
+
+  useEffect(() => {
+    const locale = langMap[lang] || zh_CN;
+    const localeKey = dayjsLangMap[lang] || 'zh-cn'
+    setLocale(locale);
+    dayjs.locale(localeKey)
+  }, [lang]);
+  return (
+    <ConfigProvider
+      locale={locale}
+      componentSize={"large"}
+      theme={{
+        token: {
+          borderRadiusLG: 4,
+        },
+      }}
+    >
+      {useRoutes(routes)}
+    </ConfigProvider>
+  );
 }
 export default App;

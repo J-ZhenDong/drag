@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "..";
-type Activity = {
+interface ActivityState {
   activityName: string;
   activityId: number;
   date: string;
   address: string;
 };
-const initialState: Activity = {
+const initialState: ActivityState = {
   activityName: "英文脱口秀",
   activityId: 1111,
   date: "2024-11-02",
@@ -16,7 +16,7 @@ export const activitySlice = createSlice({
   name: "activity",
   initialState,
   reducers: {
-    setActivity(state, action: { payload: Activity }) {
+    setActivity(state, action: { payload: ActivityState }) {
       state.activityId = action.payload.activityId;
       state.activityName = action.payload.activityName;
       state.address = action.payload.address;

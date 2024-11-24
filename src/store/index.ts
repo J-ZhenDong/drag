@@ -1,7 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import roleReducer from './slice/role'
+import langReducer from './slice/lang'
 import activityReducer from './slice/activity'
+
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
 export type AppThunk<ReturnType=void> =ThunkAction<ReturnType, RootState, unknown, Action<string>>
@@ -9,6 +11,7 @@ export type AppThunk<ReturnType=void> =ThunkAction<ReturnType, RootState, unknow
 export const store = configureStore({
   reducer: {
     role: roleReducer,
+    lang: langReducer,
     acitivity: activityReducer
   }
 })
