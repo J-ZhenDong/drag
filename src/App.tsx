@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useRoutes } from "react-router-dom";
+import { useRoutes, RouterProvider} from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ConfigProvider } from "antd";
 import en_US from "antd/locale/en_US";
@@ -22,10 +22,10 @@ function App() {
   const [locale, setLocale] = useState(zh_CN);
 
   useEffect(() => {
-    const locale = langMap[lang] || zh_CN;
-    const localeKey = dayjsLangMap[lang] || 'zh-cn'
-    setLocale(locale);
-    dayjs.locale(localeKey)
+    const antdLocale = langMap[lang] || zh_CN;
+    const dayjsLocale = dayjsLangMap[lang] || 'zh-cn'
+    setLocale(antdLocale);
+    dayjs.locale(dayjsLocale)
   }, [lang]);
   return (
     <ConfigProvider
@@ -37,7 +37,8 @@ function App() {
         },
       }}
     >
-      {useRoutes(routes)}
+      <RouterProvider router={routes}/>
+      {/* {useRoutes(routes)} */}
     </ConfigProvider>
   );
 }

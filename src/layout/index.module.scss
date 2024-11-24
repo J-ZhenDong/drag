@@ -1,0 +1,32 @@
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  &_aside {
+    overflow: auto;
+    width: 200px;
+    height: 100vh;
+    max-width: 100vh;
+    background-color: green;
+  }
+  &_main {
+    overflow: auto;
+    position: relative;
+    width: calc(100% - 200px);
+    height: 100vh;
+    max-height: 100vh;
+    background-color: red;
+  }
+  &_header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 60px;
+  }
+  &_content {
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    max-height: calc(100vh - 60px);
+  }
+}
