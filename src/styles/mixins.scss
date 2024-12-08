@@ -1,0 +1,55 @@
+@use "./variables" as *;
+@mixin bg_color(){
+  background: $background-color-default;
+  [data-theme=dark] & {
+    background: $background-color-dark;
+  }
+  [data-theme=light] & {
+    background: $background-color-light;
+  }
+}
+@mixin bg_sub_color(){
+  background: $background-color-sub-default;
+  [data-theme=dark] & {
+    background: $background-color-sub-dark;
+  }
+  [data-theme=light] & {
+    background: $background-color-sub-light;
+  }
+}
+@mixin font_color(){
+  color: $font-color-default;
+  [data-theme=dark] & {
+    color: $font-color-dark;
+  }
+  [data-theme=light] & {
+    color: $font-color-light;
+  }
+}
+@mixin font_active_color(){
+  color: $font-active-color-default;
+  [data-theme=dark] & {
+    color: $font-active-color-dark;
+  }
+  [data-theme=light] & {
+    color: $font-active-color-light;
+  }
+}
+@mixin icon_color(){
+    color: $icon-color-default;
+    [data-theme=dark] & {
+        color: $icon-color-dark;
+    }
+    [data-theme=light] & {
+        color: $icon-color-light;
+    }
+}
+@mixin border_color(){
+  border-color: $border-color-default;
+  [data-theme=dark] & {
+    border-color: $border-color-dark;
+  }
+  [data-theme=light] & {
+    border-color: $border-color-light;
+  }
+}

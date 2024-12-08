@@ -1,3 +1,4 @@
+@use '@/styles/mixins' as *;
 .layout {
   display: flex;
   flex-wrap: wrap;
@@ -8,21 +9,26 @@
     width: 200px;
     height: 100vh;
     max-width: 100vh;
-    background-color: green;
+    border-right: 1px solid;
+    @include border_color();
+    @include bg_color();
   }
   &_main {
     overflow: auto;
     position: relative;
-    width: calc(100% - 200px);
+    width: calc(100% - 201px);
     height: 100vh;
     max-height: 100vh;
-    background-color: red;
+    @include bg_color();
   }
   &_header {
     position: fixed;
     top: 0;
     width: 100vw;
     height: 60px;
+    border-bottom: 1px solid;
+    @include border_color();
+    @include bg_color();
   }
   &_content {
     margin-top: 60px;

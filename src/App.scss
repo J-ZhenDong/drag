@@ -1,0 +1,33 @@
+@forward './styles/styles.scss';
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 999;
+}
+
+::view-transition-new(root) {
+  z-index: 999;
+}
+
+/* 确保暗色主题的背景色正确 */
+[data-theme='dark'] {
+  background-color: #141414;
+}
+
+[data-theme='light'] {
+  background-color: #ffffff;
+}

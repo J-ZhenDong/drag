@@ -1,4 +1,23 @@
 .menu {
+  box-sizing: border-box;
   width: 100%;
-  background-color: teal;
+  padding: 15px;
+}
+:global(.ant-menu-light) {
+  border-inline-end: none !important;
+}
+.project {
+  display: flex;
+  align-items: center;
+  &_logo {
+    margin-right: 12px;
+    width: 32px;
+    height: 27px;
+  }
+  &_text {
+    color: #F2F2F2;
+    font-size: 18px;
+    font-weight: 600;
+
+  }
 }

@@ -1,5 +1,8 @@
+@use '@/styles/mixins' as *;
+
 .home_page {
   width: 100vw;
-  height: 800px;
+  height: 1800px;
   border: 1px solid saddlebrown;
+  @include font_color();
 }

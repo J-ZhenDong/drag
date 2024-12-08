@@ -1,0 +1,12 @@
+// @use "variables" as *;
+// @use "mixins" as *;
+// @forward './variables.scss';
+@forward './mixins.scss';
+// @include mixins.theme(variables.$primary-color, variables.$background-color, variables.$text-color);
+
+// body {
+//   @include theme($primary-color, $background-color, $text-color);
+// }
+// body.dark-theme {
+//   @include theme($dark-primary-color, $dark-background-color, $dark-text-color);
+// }
