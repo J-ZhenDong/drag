@@ -1,32 +1,33 @@
 /* 字体定义规范 */
-$font_samll:12Px;
-$font_medium_s:14Px;
-$font_medium:16Px;
-$font_large:18Px;
+$font_samll:12px;
+$font_medium_s:14px;
+$font_medium:16px;
+$font_large:18px;
 /* 背景颜色规范(主要) */
-$background-color-default: #d43c33;//背景主题颜色默认(网易红)
-$background-color-light: #fefefe;//背景主题颜色1(QQ绿)
-$background-color-dark: #36363a;//背景主题颜色2(夜间模式)
+$background-color-default: #fefefe;
+$background-color-light: #fefefe;
+$background-color-dark: #36363a;
 /* 背景颜色规范(次要) */ 
-$background-color-sub-default: #f5f5f5;//背景主题颜色默认(网易红)
-$background-color-sub-light: #fefefe;//背景主题颜色1(QQ绿)
-$background-color-sub-dark: #444;//背景主题颜色2(夜间模式)
+$background-color-sub-default: #f5f5f5;
+$background-color-sub-light: rgba(230,230,230,.5);
+$background-color-sub-dark: rgba(255,255,255,.1);
+/* 背景颜色规范(激活)*/
+$background-color-active-default: rgba(99, 99, 99, 0.15);
+$background-color-active-light: rgba(66, 66, 66, 0.15);
+$background-color-active-dark: rgba(255, 255, 255, 0.15);
 /* 字体颜色规范(默认) */
-$font-color-default : #666;//字体主题颜色默认(网易)
-$font-color-light : #666;//字体主题颜色1(QQ)
-$font-color-dark : #ddd;//字体主题颜色2(夜间模式)
+$font-color-default : #666;
+$font-color-light : #666;
+$font-color-dark : #ddd;
 /* 字体颜色规范(激活) */
-$font-active-color-default : #d43c33;//字体主题颜色默认(网易红)
-$font-active-color-light : #42b983;//字体主题颜色1(QQ绿)
-$font-active-color-dark : #ffcc33;//字体主题颜色2(夜间模式)
+$font-active-color-default : #1677ff;
+$font-active-color-light : #1677ff;
+$font-active-color-dark : #fefefe;
 /* 边框颜色 */
-$border-color-default : #d43c33;//边框主题颜色默认(网易)
-$border-color-light : #f5f5f5;//边框主题颜色1(QQ)
-$border-color-dark : #ffcc33;//边框主题颜色2(夜间模式)
+$border-color-default : rgba(99, 99, 99, 0.15);
+$border-color-light : rgba(99, 99, 99, 0.15);
+$border-color-dark : rgb(229, 231, 235, .15);
 /* 字体图标颜色 */
-$icon-color-default : #ffffff;//边框主题颜色默认(网易)
-$icon-color-light : #ffffff;//边框主题颜色1(QQ)
-$icon-color-dark : #ffcc2f;//边框主题颜色2(夜间模式)
-$icon-theme : #d43c33;//边框主题颜色默认(网易)
-$icon-light : #42b983;//边框主题颜色1(QQ)
-$icon-dark : #ffcc2f;//边框主题颜色2(夜间模式)
+$icon-color-default : #ffffff;
+$icon-color-light : #323639;
+$icon-color-dark : #f2f2f2;

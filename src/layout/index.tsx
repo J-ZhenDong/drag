@@ -8,6 +8,9 @@ function Layout() {
     <div className={styles.layout}>
       <aside className={styles.layout_aside}>
         <Menu />
+        <div>
+          <i className="iconfont">&#xe713;</i>
+        </div>
       </aside>
       <main className={styles.layout_main}>
         <header className={styles.layout_header}>

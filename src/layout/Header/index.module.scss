@@ -1,6 +1,93 @@
+@use '@/styles/mixins'as *;
+
 .header {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: space-between;
+  padding: 0 30px;
   height: 100%;
+  @include font_color();
+
+  &_left {
+    flex: 1;
+  }
+
+  &_right {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+    &:hover {
+      @include bg_active_color();
+    }
+
+    &_icon {
+      font-size: 20px !important;
+      @include icon_color();
+    }
+  }
+
+  .search_bar {
+    display: flex;
+    align-items: center;
+    padding: 4px 5px;
+    @include bg_sub_color();
+    font-size: 12px;
+    border-radius: 13px;
+
+    &>span {
+      margin: 0 5px;
+    }
+
+    &>div {
+      padding: 2px 5px 2px;
+      border-radius: 4px 9px 9px 4px;
+      font-weight: 500;
+
+      [data-theme=dark] & {
+        background-color: rgba(0, 0, 0, .5);
+      }
+
+      [data-theme=light] & {
+        background-color: rgba(255, 255, 255, 1);
+      }
+
+    }
+
+    &:hover {
+      [data-theme=dark] & {
+        color: #ffffff;
+      }
+
+      [data-theme=light] & {
+        color: #000000;
+      }
+
+    }
+  }
+
+  .user_control {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &>img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }

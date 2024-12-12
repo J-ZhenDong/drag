@@ -17,6 +17,15 @@
     background: $background-color-sub-light;
   }
 }
+@mixin bg_active_color() {
+  background: $background-color-active-default;
+  [data-theme=dark] & {
+    background: $background-color-active-dark;
+  }
+  [data-theme=light] & {
+    background: $background-color-active-light;
+  }
+}
 @mixin font_color(){
   color: $font-color-default;
   [data-theme=dark] & {

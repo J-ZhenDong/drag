@@ -76,8 +76,10 @@ export const AntDarkTheme = {
 }
 export const AntLightTheme = {
   Menu: {
+    itemBg: '#ffffff',
     itemColor: '#cccccc',
-    itemHoverBg: 'rgba(255, 255, 255, 0.1)',
-    itemHoverColor: '#ffffff',
+    itemHoverBg: 'rgb(22, 119, 255, .1)',
+    itemHoverColor: '#1677ff',
+    colorFillAlter: '#ffffff'
   }
 }

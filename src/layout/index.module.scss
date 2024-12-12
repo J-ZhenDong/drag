@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
+  @include font_color();
   &_aside {
     overflow: auto;
     width: 200px;
@@ -24,7 +25,7 @@
   &_header {
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: calc(100vw - 200px);
     height: 60px;
     border-bottom: 1px solid;
     @include border_color();
