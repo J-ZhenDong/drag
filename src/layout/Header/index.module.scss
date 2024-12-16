@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 14px;
   height: 100%;
   @include font_color();
 
@@ -23,20 +23,20 @@
   }
 
   &_item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-
-    &:hover {
-      @include bg_active_color();
-    }
-
+    margin-right: 5px;
     &_icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
       font-size: 20px !important;
+      cursor: pointer;
       @include icon_color();
+      &:hover {
+        @include bg_active_color();
+      }
     }
   }
 

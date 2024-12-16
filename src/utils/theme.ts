@@ -72,6 +72,8 @@ export const AntDarkTheme = {
     itemSelectedBg: 'rgba(255, 255, 255, 0.1)',
     itemSelectedColor: '#ffffff',
     colorFillAlter: '#36363a',
+    collapsedIconSize: 20,
+    popupBg: '#36363a'
   }
 }
 export const AntLightTheme = {
@@ -80,6 +82,8 @@ export const AntLightTheme = {
     itemColor: '#cccccc',
     itemHoverBg: 'rgb(22, 119, 255, .1)',
     itemHoverColor: '#1677ff',
-    colorFillAlter: '#ffffff'
+    colorFillAlter: '#ffffff',
+    collapsedIconSize: 20,
+    popupBg: '#ffffff'
   }
 }

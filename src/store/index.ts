@@ -4,6 +4,7 @@ import roleReducer from './slice/role'
 import langReducer from './slice/lang'
 import activityReducer from './slice/activity'
 import themeReducer from './slice/theme'
+import menuTypeReducer from './slice/menuType'
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
 export type AppThunk<ReturnType=void> =ThunkAction<ReturnType, RootState, unknown, Action<string>>
@@ -13,7 +14,8 @@ export const store = configureStore({
     role: roleReducer,
     lang: langReducer,
     acitivity: activityReducer,
-    theme: themeReducer
+    theme: themeReducer,
+    menuType: menuTypeReducer
   }
 })
 export const useAppDispatch = () => useDispatch<AppDispatch>()

@@ -11,6 +11,7 @@ import type { MenuProps } from "antd";
 import classnames from "classnames";
 import { getLang, setLang, type Lang } from "@/store/slice/lang";
 import { getTheme, toggleTheme, type Theme } from "@/store/slice/theme";
+import { getMenuType, toggleCollapsed } from "@/store/slice/menuType";
 import { changeTheme } from "@/utils/theme";
 import styles from "./index.module.scss";
 
@@ -146,6 +147,7 @@ function Header() {
   const dispatch = useDispatch();
   const { theme } = useSelector(getTheme);
   const { lang } = useSelector(getLang);
+  const {collapsed} = useSelector(getMenuType)
   const { i18n, t } = useTranslation();
   const [actionItem, setActionItem] = useState<ActionItem[]>(initialActionItem);
 
@@ -170,14 +172,16 @@ function Header() {
 
   return (
     <div className={styles.header}>
-      <div className={styles.header_left}>面包屑</div>
+      <div className={styles.header_left}>
+        <div className={styles.header_item_icon}>
+          <i className={classnames('iconfont', styles.header_item_icon)} onClick={() => dispatch(toggleCollapsed({collapsed: !collapsed}))}>&#xe652;</i>
+        </div>
+      </div>
       <div className={styles.header_right}>
         {actionItem.map((item) => (
-          <div key={item.id}>
+          <div className={styles.header_item} key={item.id}>
             {item.icon ? (
-              <div className={styles.header_item}>
                 <IconButton {...item} items={items} />
-              </div>
             ) : (
               item.component
             )}

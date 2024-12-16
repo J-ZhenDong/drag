@@ -13,11 +13,26 @@
     border-right: 1px solid;
     @include border_color();
     @include bg_color();
+    &_bottom {
+      box-sizing: border-box;
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+    }
+    &_bottom_item {
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 25px;
+      border-radius: 5px;
+      @include bg_sub_color();
+      cursor: pointer;
+    }
   }
   &_main {
+    flex: 1;
     overflow: auto;
     position: relative;
-    width: calc(100% - 201px);
     height: 100vh;
     max-height: 100vh;
     @include bg_color();
@@ -25,7 +40,6 @@
   &_header {
     position: fixed;
     top: 0;
-    width: calc(100vw - 200px);
     height: 60px;
     border-bottom: 1px solid;
     @include border_color();
